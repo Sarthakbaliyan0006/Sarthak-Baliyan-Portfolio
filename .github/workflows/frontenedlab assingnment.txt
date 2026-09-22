@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marksheet</title>
+</head>
+<body>
+
+    <h1 align="center">STUDENT MARKSHEET</h1>
+
+    <table border="1" cellpadding="10" cellspacing="0" align="center">
+        <tr>
+            <th colspan="5">Student Details</th>
+        </tr>
+
+        <tr>
+            <td><b>Name</b></td>
+            <td>Sarthak Baliyan</td>
+            <td><b>Roll No.</b></td>
+            <td>100</td>
+            <td rowspan="2">Photo</td>
+        </tr>
+
+        <tr>
+            <td><b>Course</b></td>
+            <td>B.Tech CSE</td>
+            <td><b>Semester</b></td>
+            <td>2nd</td>
+        </tr>
+
+        <tr>
+            <th>Subject</th>
+            <th>Max Marks</th>
+            <th>Marks Obtained</th>
+            <th>Grade</th>
+            <th>Result</th>
+        </tr>
+
+        <tr>
+            <td>Python</td>
+            <td>100</td>
+            <td>85</td>
+            <td>A</td>
+            <td>Pass</td>
+        </tr>
+
+        <tr>
+            <td>Java</td>
+            <td>100</td>
+            <td>80</td>
+            <td>A</td>
+            <td>Pass</td>
+        </tr>
+
+        <tr>
+            <td>Mathematics</td>
+            <td>100</td>
+            <td>88</td>
+            <td>A+</td>
+            <td>Pass</td>
+        </tr>
+
+        <tr>
+            <td>Web Development</td>
+            <td>100</td>
+            <td>90</td>
+            <td>A+</td>
+            <td>Pass</td>
+        </tr>
+
+        <tr>
+            <td>Computer Networks</td>
+            <td>100</td>
+            <td>78</td>
+            <td>B+</td>
+            <td>Pass</td>
+        </tr>
+
+        <tr>
+            <th>Total</th>
+            <th>500</th>
+            <th>421</th>
+            <th colspan="2">PASS</th>
+        </tr>
+    </table>
+
+</body>
+</html>
