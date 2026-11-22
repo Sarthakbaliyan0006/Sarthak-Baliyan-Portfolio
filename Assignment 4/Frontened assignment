@@ -1,1 +1,135 @@
+Theory Assignment – 4
+
+1.What is a closure in JavaScript? Explain with a suitable example.
+A closure is a function that remembers variables from its outer function even after the outer function has finished executing.
+Example:
+function outer() {
+    let count = 0;
+    function inner() {
+        count++;
+        console.log(count);
+    }
+    return inner;
+}
+let result = outer();
+result(); // 1
+result(); // 2
+Here, the inner function remembers the variable count even after the outer function has executed.
+
+2. What is a Promise in JavaScript? Explain its different states.
+A Promise is an object used to handle asynchronous operations in JavaScript. It represents a value that may be available now, later, or never.
+Three states of a Promise:
+1.	Pending: Initial state; operation is still running.
+2.	Fulfilled: Operation completed successfully.
+3.	Rejected: Operation failed.
+Example:
+
+let myPromise = new Promise(function(resolve, reject) {
+    let success = true;
+
+    if (success) {
+        resolve("Task completed");
+    } else {
+        reject("Task failed");
+    }
+});
+
+myPromise.then(function(result) {
+    console.log(result);
+}).catch(function(error) {
+    console.log(error);
+});
+
+3. What is async/await in JavaScript? How does it simplify working with Promises?
+Async/await is a feature of JavaScript used to handle asynchronous operations in a simpler and more readable way.
+•	async makes a function return a Promise.
+•	await pauses the execution of the async function until the Promise is settled.
+Example:
+async function getData() {
+    let result = await Promise.resolve("Data received");
+    console.log(result);
+}
+getData();
+It makes asynchronous code look like synchronous code and reduces the use of multiple .then() methods.
+
+4. What is the Global Execution Context in JavaScript?
+The Global Execution Context (GEC) is the default environment created by JavaScript when a program starts executing.
+It has two main phases:
+1.	Memory Creation Phase: Variables and function declarations are allocated memory.
+2.	Code Execution Phase: JavaScript executes statements line by line.
+The Global Execution Context creates the global object and sets the value of this to the global object in a traditional browser script.
+
+5. What is currying in JavaScript? Explain with an example.
+Currying is a technique in JavaScript where a function with multiple arguments is converted into a sequence of functions, each taking one argument.
+Example:
+function add(a) {
+    return function(b) {
+        return function(c) {
+            return a + b + c;
+        };
+    };
+}
+console.log(add(2)(3)(4)); // 9
+Here, each function takes one argument and returns another function until all arguments are received.
+
+6. What is jQuery, and what is its significance in web development?
+jQuery is a lightweight JavaScript library that simplifies HTML document manipulation, event handling, animations and AJAX operations.
+Significance:
+1.	Simplifies DOM manipulation.
+2.	Makes event handling easier.
+3.	Provides simple animation methods.
+4.	Supports AJAX requests.
+5.	Helps maintain cross-browser compatibility.
+Example:
+$(document).ready(function() {
+    $("#btn").click(function() {
+        $("p").hide();
+    });
+});
+
+
+7. What is a component in React? Explain its types.
+A component in React is a reusable and independent piece of UI that helps divide an application into smaller parts.
+Types of components:
+1.	Functional Components: JavaScript functions that return JSX to display UI.
+2.	Class Components: ES6 classes that extend React.Component and use a render method to return JSX.
+Example of Functional Component:
+function Welcome() {
+    return <h1>Hello World!</h1>;
+}
+Example of Class Component:
+class Welcome extends React.Component {
+    render() {
+        return <h1>Hello World!</h1>;
+    }
+}
+
+8. What is the Virtual DOM? How does it improve application performance?
+The Virtual DOM is a lightweight copy of the actual DOM maintained in memory by React.
+When changes occur:
+1.	React creates an updated Virtual DOM.
+2.	It compares the new Virtual DOM with the previous one using a process called Diffing.
+3.	It identifies the changes.
+4.	It updates only the necessary parts of the actual DOM.
+This reduces unnecessary DOM operations and improves application performance.
+
+9. What is JSX? Why can browsers not understand it directly?
+JSX stands for JavaScript XML. It is a syntax extension used in React that allows developers to write HTML-like code inside JavaScript.
+Browsers cannot understand JSX directly because it is not valid standard JavaScript syntax. It must be converted into regular JavaScript using tools like Babel.
+Example:
+const element = <h1>Hello World!</h1>;
+After compilation, JSX is converted into JavaScript function calls that React can understand.
+
+10. What are props in React? Are they mutable or immutable?
+Props (properties) are used to pass data from a parent component to a child component in React.
+They help make components reusable and allow communication between components.
+Example:
+function Student(props) {
+    return <h2>Hello {props.name}</h2>;
+}
+function App() {
+    return <Student name="Dhruvi" />;
+}
+Props are immutable, which means a child component cannot directly modify the props received from its parent. The parent component controls their values.
+
 
